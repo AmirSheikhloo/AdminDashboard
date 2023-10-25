@@ -4,24 +4,22 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
-import HomeIcon from '@mui/icons-material/Home';
-import PeopleIcon from '@mui/icons-material/People';
-import ContactsIcon from '@mui/icons-material/Contacts';
-import ReceiptIcon from '@mui/icons-material/Receipt';
-import PersonIcon from '@mui/icons-material/Person';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import HelpIcon from '@mui/icons-material/Help';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import PieChartIcon from '@mui/icons-material/PieChart';
-import TimelineIcon from '@mui/icons-material/Timeline';
-import MenuIcon from '@mui/icons-material/Menu';
-import MapIcon from '@mui/icons-material/Map';
-
-
+import HomeIcon from "@mui/icons-material/Home";
+import PeopleIcon from "@mui/icons-material/People";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import PersonIcon from "@mui/icons-material/Person";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import HelpIcon from "@mui/icons-material/Help";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import PieChartIcon from "@mui/icons-material/PieChart";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  
   return (
     <MenuItem
       active={selected === title}
@@ -63,7 +61,7 @@ const Sidebar = () => {
         },
       }}
     >
-      <ProSidebar collapsed={isCollapsed}>
+      <ProSidebar collapsed={isCollapsed} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -82,7 +80,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  MENU 
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuIcon />
@@ -112,7 +110,7 @@ const Sidebar = () => {
                   Amir Sheikhloo
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  UI Admin
+                  Admin
                 </Typography>
               </Box>
             </Box>
@@ -213,7 +211,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-          
           </Box>
         </Menu>
       </ProSidebar>
